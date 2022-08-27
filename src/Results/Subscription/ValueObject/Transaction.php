@@ -3,7 +3,7 @@
 namespace OscarVha\PaypalApi\Results\Subscription\ValueObject;
 
 use Carbon\Carbon;
-use Itgasmobi\PaypalApi\Results\Transaction\ValueObject\Amount;
+use OscarVha\PaypalApi\Results\Transaction\ValueObject\Amount;
 
 /**
  *

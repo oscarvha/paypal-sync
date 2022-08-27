@@ -19,7 +19,7 @@ class Subscription extends PaypalApi
 {
     /**
      * @param string $subscriptionId
-     * @return \Itgasmobi\PaypalApi\Results\Subscription\Subscription
+     * @return \OscarVha\PaypalApi\Results\Subscription\Subscription
      * @throws JsonException
      * @throws ApiInvalidRequestException
      */
@@ -41,11 +41,11 @@ class Subscription extends PaypalApi
      * @param string $subscriptionId
      * @param string $startDate
      * @param string $endDate
-     * @return \Itgasmobi\PaypalApi\Results\Subscription\Subscription
+     * @return \OscarVha\PaypalApi\Results\Subscription\Subscription
      * @throws ApiInvalidRequestException
      * @throws JsonException
      */
-    public function getWithTransactions(string $subscriptionId, string $startDate, string $endDate): \Itgasmobi\PaypalApi\Results\Subscription\Subscription
+    public function getWithTransactions(string $subscriptionId, string $startDate, string $endDate): \OscarVha\PaypalApi\Results\Subscription\Subscription
     {
         $startDate = Carbon::parse($startDate)->format('Y-m-d\TH:i:s\Z');
         $endDate = Carbon::parse($endDate)->setHours(23)->setMinutes(59)->setSeconds(59)->format('Y-m-d\TH:i:s\Z');
@@ -65,11 +65,11 @@ class Subscription extends PaypalApi
     /**
      * @param stdClass $results
      * @param array $transactions
-     * @return \Itgasmobi\PaypalApi\Results\Subscription\Subscription
+     * @return \OscarVha\PaypalApi\Results\Subscription\Subscription
      */
-    private function parseResults(stdClass $results , array $transactions  = []) : \Itgasmobi\PaypalApi\Results\Subscription\Subscription
+    private function parseResults(stdClass $results , array $transactions  = []) : \Oscarvha\PaypalApi\Results\Subscription\Subscription
     {
-       return \Itgasmobi\PaypalApi\Results\Subscription\Subscription::createFromStdClass($results ,$transactions);
+       return \OscarVha\PaypalApi\Results\Subscription\Subscription::createFromStdClass($results ,$transactions);
     }
 
     /**
@@ -100,7 +100,7 @@ class Subscription extends PaypalApi
                 if(!isset($transaction->id)) {
                  continue;
                 }
-                $transactions[] = \Itgasmobi\PaypalApi\Results\Subscription\ValueObject\Transaction::crateFromStdClass($transaction);
+                $transactions[] = \OscarVha\PaypalApi\Results\Subscription\ValueObject\Transaction::crateFromStdClass($transaction);
 
             }
         }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Itgasmobi\PaypalApi\Util;
+namespace OscarVha\PaypalApi\Util;
 
 use Dflydev\DotAccessData\Data;
 use OscarVha\PaypalApi\Exceptions\EmptyCurlResponseException;

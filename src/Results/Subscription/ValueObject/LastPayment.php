@@ -2,7 +2,7 @@
 
 namespace OscarVha\PaypalApi\Results\Subscription\ValueObject;
 
-use Itgasmobi\PaypalApi\Results\Transaction\ValueObject\Amount;
+use OscarVha\PaypalApi\Results\Transaction\ValueObject\Amount;
 use stdClass;
 
 /**

@@ -3,7 +3,7 @@
 namespace OscarVha\PaypalApi\Results\Subscription\ValueObject;
 
 
-use Itgasmobi\PaypalApi\Results\Transaction\ValueObject\Payer;
+use OscarVha\PaypalApi\Results\Transaction\ValueObject\Payer;
 use stdClass;
 
 class Subscriber

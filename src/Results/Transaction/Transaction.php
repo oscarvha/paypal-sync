@@ -1,6 +1,6 @@
 <?php
 
-namespace Itgasmobi\PaypalApi\Results\Transaction;
+namespace OscarVha\PaypalApi\Results\Transaction;
 
 use OscarVha\PaypalApi\Results\Transaction\ValueObject\Amount;
 use OscarVha\PaypalApi\Results\Transaction\ValueObject\Code;

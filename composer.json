@@ -2,8 +2,10 @@
     "name": "oscarvha/paypal-sync",
     "description": "Paypal Sync",
     "type": "library",
-    "psr-4": {
-        "OscarVha\\PaypalApi\\": "src/"
+    "autoload": {
+        "psr-4": {
+            "OscarVha\\PaypalApi\\": "src/"
+        }
     },
     "authors": [
         {
