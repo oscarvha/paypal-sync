@@ -1,0 +1,17 @@
+{
+    "name": "oscarvha/paypal-sync",
+    "description": "Paypal Sync",
+    "type": "library",
+    "psr-4": {
+        "OscarVha\\PaypalApi\\": "src/"
+    },
+    "authors": [
+        {
+            "name": "Oscar Sanchez",
+            "email": "oscarsoftwaredeveloper@gmail.com"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^2.61"
+    }
+}
