@@ -12,6 +12,9 @@ use stdClass;
 /**
  *
  */
+/**
+ *
+ */
 class Subscription
 {
     /**
@@ -47,6 +50,9 @@ class Subscription
     /** @var Cycle[] */
     private array $cycles;
 
+    /** @var string|null */
+    private ?string $nextPaymentDate;
+
     /**
      * @var LastPayment|null
      */
@@ -61,6 +67,7 @@ class Subscription
      * @param string $planId
      * @param string $initialDate
      * @param string $updatedDate
+     * @param string|null $nextPaymentDate
      * @param Subscriber|null $subscriber
      * @param array $cycles
      * @param LastPayment|null $lastPayment
@@ -71,6 +78,7 @@ class Subscription
                                 string $planId,
                                 string $initialDate,
                                 string $updatedDate,
+                                ?string $nextPaymentDate,
                                 ?Subscriber $subscriber,
                                 array $cycles,
                                 ?LastPayment $lastPayment,
@@ -81,6 +89,7 @@ class Subscription
         $this->planId = $planId;
         $this->initialDate = $initialDate;
         $this->updatedDate = $updatedDate;
+        $this->$nextPaymentDate = $nextPaymentDate;
         $this->subscriber = $subscriber;
         $this->cycles = $cycles;
         $this->lastPayment = $lastPayment;
@@ -161,6 +170,15 @@ class Subscription
 
 
     /**
+     * @return string
+     */
+    public function getNextPaymentDate(): string
+    {
+        return $this->nextPaymentDate;
+    }
+
+
+    /**
      * @param stdClass $subscription
      * @param array $transactions
      * @return Subscription
@@ -195,6 +213,7 @@ class Subscription
             $subscription->plan_id,
             $subscription->start_time,
             $subscription->update_time,
+            $subscription->billing_info->next_billing_time,
             $subscriber,
             $cycles,
             $lastPayment,
